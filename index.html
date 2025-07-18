@@ -3,120 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensagem Especial 💕</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;display:flex;flex-direction:column;position:relative;overflow-x:hidden}.heart{position:absolute;color:rgba(255,182,193,0.7);font-size:20px;animation:float 6s ease-in-out infinite;pointer-events:none}@keyframes float{0%,100%{transform:translateY(100vh) rotate(0deg);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-100px) rotate(360deg);opacity:0}}.container{flex:1;display:flex;justify-content:center;align-items:center;padding:20px;z-index:2}.message-card{background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);border-radius:20px;padding:50px;text-align:center;box-shadow:0 15px 35px rgba(0,0,0,0.1);border:1px solid rgba(255,255,255,0.2);max-width:600px;animation:fadeInUp 1s ease-out}@keyframes fadeInUp{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}.main-message{font-family:'Dancing Script',cursive;color:#fff;font-size:clamp(2rem,5vw,4rem);font-weight:700;text-shadow:2px 2px 10px rgba(0,0,0,0.3);margin-bottom:30px;line-height:1.2;animation:glow 2s ease-in-out infinite alternate}@keyframes glow{from{text-shadow:2px 2px 10px rgba(0,0,0,0.3),0 0 20px rgba(255,255,255,0.2)}to{text-shadow:2px 2px 10px rgba(0,0,0,0.3),0 0 30px rgba(255,255,255,0.4)}}.decoration{font-size:2rem;margin:20px 0;animation:pulse 1.5s ease-in-out infinite}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}.control-panel{background:rgba(255,255,255,0.1);backdrop-filter:blur(5px);border-radius:15px;padding:30px;margin-top:30px;border:1px solid rgba(255,255,255,0.2)}.input-group{margin-bottom:20px}.input-group label{display:block;color:#fff;margin-bottom:8px;font-weight:600}.input-group input,.input-group textarea{width:100%;padding:12px;border:none;border-radius:8px;background:rgba(255,255,255,0.2);color:#fff;font-size:16px;backdrop-filter:blur(5px)}.input-group input::placeholder,.input-group textarea::placeholder{color:rgba(255,255,255,0.7)}.btn{background:linear-gradient(45deg,#ff6b6b,#ff8e8e);color:white;border:none;padding:12px 30px;border-radius:25px;font-size:16px;font-weight:600;cursor:pointer;transition:all 0.3s ease;margin:5px;box-shadow:0 5px 15px rgba(255,107,107,0.3)}.btn:hover{transform:translateY(-2px);box-shadow:0 7px 20px rgba(255,107,107,0.4)}.btn:active{transform:translateY(0)}.generated-link{background:rgba(255,255,255,0.1);border-radius:10px;padding:15px;margin-top:20px;word-break:break-all;display:none}.generated-link.show{display:block;animation:slideIn 0.5s ease-out}@keyframes slideIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}@media (max-width:768px){.message-card{padding:30px 20px}.control-panel{padding:20px}}.view-mode .control-panel{display:none!important}.view-mode .message-card{animation:heartBeat 2s ease-in-out infinite}@keyframes heartBeat{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}.admin-mode{display:none}.admin-mode.show{display:block}.hidden{display:none!important}</style>
+    <title>Mensagem Especial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .container {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%);
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2),
+                        0 10px 30px rgba(139, 92, 246, 0.3),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            max-width: 650px;
+            margin: 2rem;
+            position: relative;
+            animation: fadeIn 1.5s ease-out;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .message {
+            font-size: 1.5rem;
+            line-height: 1.9;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            animation: slideUp 1s ease-out 0.5s both;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 400;
+        }
+
+        .highlight {
+            color: #fbbf24;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        .heart {
+            color: #f87171;
+            font-size: 1.8rem;
+            animation: heartbeat 2s infinite;
+            filter: drop-shadow(0 0 8px rgba(248, 113, 113, 0.6));
+        }
+
+        .signature {
+            font-style: italic;
+            color: #e5e7eb;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .sparkles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .sparkle {
+            position: absolute;
+            background: radial-gradient(circle, #ffd700 0%, #ffed4a 100%);
+            border-radius: 50%;
+            animation: sparkle 3s infinite;
+            box-shadow: 0 0 6px rgba(255, 215, 0, 0.8);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px rgba(251, 191, 36, 0.5); }
+            100% { text-shadow: 0 0 20px rgba(251, 191, 36, 0.8), 0 0 30px rgba(251, 191, 36, 0.4); }
+        }
+
+        @keyframes sparkle {
+            0% {
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1) rotate(180deg);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0) rotate(360deg);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #8b5cf6, #7c3aed, #6d28d9, #8b5cf6);
+            border-radius: 28px;
+            z-index: -1;
+            animation: float 3s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 2rem;
+            }
+            
+            .message {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <div class="message-card">
-            <div class="decoration">💕</div>
-            <div class="main-message" id="messageDisplay">Só fiz isso porque cê é uma menina foda demais, de verdade. Tu não merece o mínimo, merece tudo de bom e mais um pouco. Forte abraço do barretin.</div>
-            <div class="decoration">✨💖✨</div>
-            
-            <!-- Painel de controle oculto por padrão -->
-            <div class="control-panel admin-mode" id="controlPanel">
-                <div class="input-group">
-                    <label>Sua mensagem especial:</label>
-                    <textarea id="messageInput" placeholder="Digite sua mensagem romântica..." rows="3">Só fiz isso porque cê é uma menina foda demais, de verdade. Tu não merece o mínimo, merece tudo de bom e mais um pouco. Forte abraço do barretin.</textarea>
-                </div>
-                <div class="input-group">
-                    <label>Nome do destinatário (opcional):</label>
-                    <input type="text" id="recipientInput" placeholder="Para quem é esta mensagem?">
-                </div>
-                <button class="btn" onclick="updateMessage()">💕 Atualizar Mensagem</button>
-                <button class="btn" onclick="generateLink()">🔗 Gerar Link</button>
-                <button class="btn" onclick="copyLink()">📋 Copiar Link</button>
-                <div class="generated-link" id="generatedLink">
-                    <strong>Link gerado:</strong><br>
-                    <span id="linkText"></span>
-                </div>
-            </div>
+        <div class="sparkles" id="sparkles"></div>
+        
+        <div class="message">
+            Só fiz isso porque cê é uma <span class="highlight">menina foda demais</span>, de verdade. 
+            Tu não merece o mínimo, merece <span class="highlight">tudo de bom e mais um pouco</span>. 
+            <br><br>
+            <strong>Forte Abraço do Barretin..</strong>
+            <br>
+            <span class="signature">Manuzinha <span class="heart">♥</span></span>
         </div>
     </div>
 
     <script>
-        // Código ofuscado e protegido
-        const _0x1a2b=['romanticMessages','loadMessages','getItem','parse','warn','Erro ao carregar mensagens:','setItem','stringify','Erro ao salvar mensagem:','getMessage','💕','💖','💝','💗','💓','💞','💘','heart','floor','random','length','left','%','animationDelay','s','animationDuration','appendChild','setTimeout','parentNode','remove','messageInput','value','recipientInput','messageDisplay','textContent','trim','Por favor, digite uma mensagem primeiro!','toString','substr','toLocaleString','pt-BR','now','saveMessage','href','split','?msg=','linkText','show','Link gerado com sucesso! 💕','clipboard','writeText','then','Link copiado! 💕','createElement','execCommand','copy','removeChild','search','msg','view-mode','classList','add','title','Para você','Mensagem não encontrada! 💔','location','DOMContentLoaded','addEventListener','keydown','ctrlKey','key','Enter','input'];
-
-        class _0x3c4d{constructor(){this[_0x1a2b[1]]=this[_0x1a2b[2]]()}[_0x1a2b[2]](){try{const _0x5e6f=localStorage[_0x1a2b[3]](_0x1a2b[0]);return _0x5e6f?JSON[_0x1a2b[4]](_0x5e6f):{}}catch(_0x7g8h){console[_0x1a2b[5]](_0x1a2b[6],_0x7g8h);return{}}}saveMessage(_0x9i0j,_0x1k2l){this[_0x1a2b[1]][_0x9i0j]=_0x1k2l;try{localStorage[_0x1a2b[7]](_0x1a2b[0],JSON[_0x1a2b[8]](this[_0x1a2b[1]]))}catch(_0x3m4n){console[_0x1a2b[5]](_0x1a2b[9],_0x3m4n)}}[_0x1a2b[10]](_0x5o6p){return this[_0x1a2b[1]][_0x5o6p]}}
-
-        const messageStorage=new _0x3c4d();
-        let isAdminMode=false;
-
-        // Função para ativar modo admin (apenas para você)
-        function activateAdmin() {
-            const secret = prompt('Digite a senha secreta:');
-            if (secret === 'minhaprinces@123') { // Mude esta senha!
-                isAdminMode = true;
-                document.getElementById('controlPanel').classList.add('show');
-                showNotification('Modo admin ativado! 🔓');
-            } else {
-                showNotification('Senha incorreta! 🔒');
-            }
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            
+            const size = Math.random() * 6 + 2;
+            sparkle.style.width = size + 'px';
+            sparkle.style.height = size + 'px';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 2 + 's';
+            sparkle.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            
+            document.getElementById('sparkles').appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 4000);
         }
 
-        // Detectar combinação secreta de teclas (Ctrl+Shift+A)
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && e.shiftKey && e.key === 'A') {
-                activateAdmin();
-            }
-        });
+        // Criar sparkles continuamente
+        setInterval(createSparkle, 200);
+        
+        // Criar alguns sparkles iniciais
+        for (let i = 0; i < 15; i++) {
+            setTimeout(createSparkle, i * 80);
+        }
 
-        function createFloatingHearts(){const _0x1q2r=[_0x1a2b[11],_0x1a2b[12],_0x1a2b[13],_0x1a2b[14],_0x1a2b[15],_0x1a2b[16],_0x1a2b[17]];setInterval(()=>{const _0x3s4t=document.createElement('div');_0x3s4t.className=_0x1a2b[18];_0x3s4t.innerHTML=_0x1q2r[Math[_0x1a2b[19]](Math[_0x1a2b[20]]()*_0x1q2r[_0x1a2b[21]])];_0x3s4t.style[_0x1a2b[22]]=Math[_0x1a2b[20]]()*100+_0x1a2b[23];_0x3s4t.style[_0x1a2b[24]]=Math[_0x1a2b[20]]()*2+_0x1a2b[25];_0x3s4t.style[_0x1a2b[26]]=(Math[_0x1a2b[20]]()*3+4)+_0x1a2b[25];document.body[_0x1a2b[27]](_0x3s4t);_0x1a2b[28](()=>{if(_0x3s4t[_0x1a2b[29]]){_0x3s4t[_0x1a2b[30]]()}},7000)},2000)}
+        // Adicionar efeito de partículas flutuantes
+        function createFloatingParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.width = '3px';
+            particle.style.height = '3px';
+            particle.style.background = 'rgba(139, 92, 246, 0.4)';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = '100%';
+            particle.style.animation = 'floatUp 8s linear infinite';
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 8000);
+        }
 
-        function updateMessage(){if(!isAdminMode)return;const _0x5u6v=document.getElementById(_0x1a2b[31])[_0x1a2b[32]];const _0x7w8x=document.getElementById(_0x1a2b[33])[_0x1a2b[32]];let _0x9y0z=_0x5u6v;if(_0x7w8x){_0x9y0z+=` 💕 ${_0x7w8x}`}document.getElementById(_0x1a2b[34])[_0x1a2b[35]]=_0x9y0z}
+        // Criar partículas flutuantes
+        setInterval(createFloatingParticle, 1000);
 
-        function generateLink(){if(!isAdminMode)return;const _0x1a2c=document.getElementById(_0x1a2b[31])[_0x1a2b[32]];const _0x3d4e=document.getElementById(_0x1a2b[33])[_0x1a2b[32]];if(!_0x1a2c[_0x1a2b[36]]()){alert(_0x1a2b[37]);return}const _0x5f6g=Date.now()[_0x1a2b[38]](36)+Math.random()[_0x1a2b[38]](36)[_0x1a2b[39]](2,9);const _0x7h8i={message:_0x1a2c,recipient:_0x3d4e,timestamp:new Date()[_0x1a2b[40]](_0x1a2b[41]),created:Date[_0x1a2b[42]]()};messageStorage[_0x1a2b[43]](_0x5f6g,_0x7h8i);const _0x9j0k=window.location[_0x1a2b[44]][_0x1a2b[45]]('?')[0];const _0x1l2m=`${_0x9j0k}${_0x1a2b[46]}${_0x5f6g}`;document.getElementById(_0x1a2b[47])[_0x1a2b[35]]=_0x1l2m;document.getElementById('generatedLink')[_0x1a2b[48]].add(_0x1a2b[49]);showNotification(_0x1a2b[50])}
-
-        function copyLink(){if(!isAdminMode)return;const _0x1n2o=document.getElementById(_0x1a2b[47])[_0x1a2b[35]];if(!_0x1n2o){alert('Gere um link primeiro!');return}if(navigator[_0x1a2b[51]]){navigator[_0x1a2b[51]][_0x1a2b[52]](_0x1n2o)[_0x1a2b[53]](()=>{showNotification(_0x1a2b[54])})}else{const _0x3p4q=document[_0x1a2b[55]]('textarea');_0x3p4q[_0x1a2b[32]]=_0x1n2o;document.body[_0x1a2b[27]](_0x3p4q);_0x3p4q.select();document[_0x1a2b[56]](_0x1a2b[57]);document.body[_0x1a2b[58]](_0x3p4q);showNotification(_0x1a2b[54])}}
-
-        function showNotification(_0x5r6s){const _0x7t8u=document[_0x1a2b[55]]('div');_0x7t8u.style.cssText=`position:fixed;top:20px;right:20px;background:linear-gradient(45deg,#ff6b6b,#ff8e8e);color:white;padding:15px 25px;border-radius:10px;font-weight:600;z-index:1000;animation:slideInRight 0.5s ease-out;box-shadow:0 5px 15px rgba(255,107,107,0.3);`;_0x7t8u[_0x1a2b[35]]=_0x5r6s;document.body[_0x1a2b[27]](_0x7t8u);_0x1a2b[28](()=>{_0x7t8u.style.animation='slideOutRight 0.5s ease-in';_0x1a2b[28](()=>{if(_0x7t8u[_0x1a2b[29]]){_0x7t8u[_0x1a2b[30]]()}},500)},3000)}
-
-        function checkUrlMessage(){const _0x9v0w=new URLSearchParams(window.location[_0x1a2b[59]]);const _0x1x2y=_0x9v0w.get(_0x1a2b[60]);if(_0x1x2y){const _0x3z4a=messageStorage[_0x1a2b[10]](_0x1x2y);if(_0x3z4a){let _0x5b6c=_0x3z4a.message;if(_0x3z4a.recipient){_0x5b6c+=` 💕 ${_0x3z4a.recipient}`}document.getElementById(_0x1a2b[34])[_0x1a2b[35]]=_0x5b6c;document.body[_0x1a2b[48]].add(_0x1a2b[61]);const _0x7d8e=document.querySelector('.decoration:last-child');_0x7d8e.innerHTML+=`<br><small style="color:rgba(255,255,255,0.8);font-size:0.7em;">Enviado com amor em ${_0x3z4a.timestamp}</small>`;document[_0x1a2b[62]]=`Mensagem Especial 💕 - ${_0x3z4a.recipient||_0x1a2b[63]}`}else{showNotification(_0x1a2b[64]);_0x1a2b[28](()=>{window[_0x1a2b[65]][_0x1a2b[44]]=window[_0x1a2b[65]][_0x1a2b[44]][_0x1a2b[45]]('?')[0]},2000)}}}
-
-        const style=document.createElement('style');style.textContent=`@keyframes slideInRight{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}@keyframes slideOutRight{from{transform:translateX(0);opacity:1}to{transform:translateX(100%);opacity:0}}`;document.head.appendChild(style);
-
-        document[_0x1a2b[66]](_0x1a2b[67],function(){createFloatingHearts();checkUrlMessage()});
-
-        document[_0x1a2b[66]](_0x1a2b[68],function(_0x9f0g){if(_0x9f0g[_0x1a2b[69]]&&_0x9f0g[_0x1a2b[70]]===_0x1a2b[71]){generateLink()}});
-
-        // Proteção adicional - desabilita ferramentas de desenvolvedor
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.shiftKey && e.key === 'C') || (e.ctrlKey && e.key === 'U')) {
-                e.preventDefault();
-                showNotification('Acesso negado! 🔒');
-                return false;
-            }
-        });
-
-        // Desabilita menu de contexto (botão direito)
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-            showNotification('Menu desabilitado! 🔒');
-        });
-
-        // Detecta se as ferramentas de desenvolvedor estão abertas
-        let devtools = {open: false,orientation: null};
-        const threshold = 160;
-        setInterval(() => {
-            if (window.outerHeight - window.innerHeight > threshold || window.outerWidth - window.innerWidth > threshold) {
-                if (!devtools.open) {
-                    devtools.open = true;
-                    document.body.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;font-size:2rem;color:white;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);">🔒 Acesso Negado</div>';
+        // Adicionar animação CSS para partículas flutuantes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatUp {
+                0% {
+                    transform: translateY(0) translateX(0);
+                    opacity: 0;
                 }
-            } else {
-                devtools.open = false;
+                10% {
+                    opacity: 1;
+                }
+                90% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-100vh) translateX(${Math.random() * 100 - 50}px);
+                    opacity: 0;
+                }
             }
-        }, 500);
-
-        // Proteção contra visualização de código fonte
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
-                e.preventDefault();
-                showNotification('Salvar desabilitado! 🔒');
-            }
-        });
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
